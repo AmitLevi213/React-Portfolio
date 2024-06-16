@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useTheme } from "../../providers/DarkThemeProvider";
 
-const Main = () => {
+const Main = ({ children }) => {
   const { isDark } = useTheme();
   return (
     <>
@@ -10,7 +10,9 @@ const Main = () => {
           minHeight: "100vh",
           backgroundColor: isDark ? "#310047" : "#d16aff",
         }}
-      ></Box>
+      >
+        {children}
+      </Box>
     </>
   );
 };
