@@ -28,7 +28,7 @@ const Icons = () => {
       <FaReact color="#61DAFB" style={iconStyles} />
       <DiNodejs color="#37e615" style={iconStyles} />
       <FaBootstrap color="#7952B3" style={iconStyles} />
-      <DiMysql color="black" style={iconStyles} />
+      <DiMysql color="aqua" style={iconStyles} />
       <DiMongodb color="#47A248" style={iconStyles} />
     </Box>
   );
