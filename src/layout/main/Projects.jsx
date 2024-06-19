@@ -9,26 +9,10 @@ import {
   Slide,
   Button,
 } from "@mui/material";
-
-const buttonStyles = {
-  color: "#fff",
-  backgroundColor: "#310047",
-  borderRadius: "8px",
-  padding: "12px 24px",
-  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-  fontWeight: "bold",
-  textTransform: "none",
-  transition: "background-color 0.3s, color 0.3s",
-  "&:hover": {
-    backgroundColor: "#452a4e",
-    fontFamily: "Roboto, sans-serif",
-    "&:hover": {
-      backgroundColor: "#452a4e",
-    },
-  },
-};
+import { useTheme } from "../../providers/DarkThemeProvider";
 
 const Projects = () => {
+  const { isDark } = useTheme();
   const projectsData = [
     {
       id: 1,
@@ -93,6 +77,21 @@ const Projects = () => {
     const endIndex = startIndex + projectsPerPage;
     return projectsData.slice(startIndex, endIndex);
   };
+  const textColor = isDark ? "#d16aff" : "#310047";
+
+  const buttonStyles = {
+    color: isDark ? "#fff" : "#310047",
+    backgroundColor: isDark ? "#310047" : "#d16aff",
+    borderRadius: "8px",
+    padding: "12px 24px",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    fontWeight: "bold",
+    textTransform: "none",
+    transition: "background-color 0.3s, color 0.3s",
+    "&:hover": {
+      backgroundColor: isDark ? "#452a4e" : "#a987c4",
+    },
+  };
 
   return (
     <Box>
@@ -104,6 +103,7 @@ const Projects = () => {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
+
                   justifyContent: "space-between",
                   height: "100%",
                 }}
@@ -145,13 +145,24 @@ const Projects = () => {
         ))}
       </Grid>
       <Box mt={3} display="flex" justifyContent="center">
-        <Button onClick={handlePrevPage} disabled={currentPage === 1}>
+        <Button
+          sx={{ color: textColor }}
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
           Prev
         </Button>
-        <Typography variant="body1" style={{ margin: "0 16px" }}>
+        <Typography
+          variant="body1"
+          style={{ margin: "0 16px", color: textColor }}
+        >
           Page {currentPage} of {totalPages}
         </Typography>
-        <Button onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <Button
+          sx={{ color: textColor }}
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
           Next
         </Button>
       </Box>
