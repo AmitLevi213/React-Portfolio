@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
@@ -30,28 +30,28 @@ const RightNavbar = () => {
   const menuItems = (
     <>
       <Link
-        sx={{ textDecoration: "none" }}
+        sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         color={isDark ? "#d16aff" : "#310047"}
         href="#"
       >
         Main
       </Link>
       <Link
-        sx={{ textDecoration: "none" }}
+        sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         color={isDark ? "#d16aff" : "#310047"}
         href="#about"
       >
         About
       </Link>
       <Link
-        sx={{ textDecoration: "none" }}
+        sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         color={isDark ? "#d16aff" : "#310047"}
         href="#gallery"
       >
         Projects
       </Link>
       <Link
-        sx={{ textDecoration: "none" }}
+        sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         color={isDark ? "#d16aff" : "#310047"}
         href="#contact"
       >
@@ -88,7 +88,10 @@ const RightNavbar = () => {
               <ListItem button>
                 <ListItemText>
                   <Link
-                    sx={{ textDecoration: "none" }}
+                    sx={{
+                      textDecoration: "none",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
                     color={isDark ? "#d16aff" : "#310047"}
                     href="#"
                   >
@@ -99,7 +102,10 @@ const RightNavbar = () => {
               <ListItem button>
                 <ListItemText>
                   <Link
-                    sx={{ textDecoration: "none" }}
+                    sx={{
+                      textDecoration: "none",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
                     color={isDark ? "#d16aff" : "#310047"}
                     href="#about"
                   >
@@ -110,7 +116,10 @@ const RightNavbar = () => {
               <ListItem button>
                 <ListItemText>
                   <Link
-                    sx={{ textDecoration: "none" }}
+                    sx={{
+                      textDecoration: "none",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
                     color={isDark ? "#d16aff" : "#310047"}
                     href="#gallery"
                   >
@@ -121,7 +130,10 @@ const RightNavbar = () => {
               <ListItem button>
                 <ListItemText>
                   <Link
-                    sx={{ textDecoration: "none" }}
+                    sx={{
+                      textDecoration: "none",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
                     color={isDark ? "#d16aff" : "#310047"}
                     href="#contact"
                   >

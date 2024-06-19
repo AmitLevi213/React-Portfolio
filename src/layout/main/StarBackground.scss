@@ -4,6 +4,17 @@
   @return $random_range;
 }
 
+:root {
+  --primary-color-dark: #0f0c29;
+  --secondary-color-dark: #302b63;
+  --tertiary-color-dark: #24243e;
+  --primary-color-light: #f0f0f0;
+  --secondary-color-light: #d9d9d9;
+  --tertiary-color-light: #c4c4c4;
+  --star-color-dark: #ffffff;
+  --star-color-light: #000000;
+}
+
 .stars {
   position: fixed;
   top: 0;
@@ -12,22 +23,37 @@
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: radial-gradient(ellipse at bottom, #310047 0%, #d16aff 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color-dark),
+    var(--secondary-color-dark),
+    var(--tertiary-color-dark)
+  );
 
   // Dark theme
   &[data-theme="dark"] {
-    background: radial-gradient(ellipse at bottom, #310047 0%, #d16aff 100%);
+    background: linear-gradient(
+      to bottom,
+      var(--primary-color-dark),
+      var(--secondary-color-dark),
+      var(--tertiary-color-dark)
+    );
   }
 
   // Light theme
   &[data-theme="light"] {
-    background: radial-gradient(ellipse at bottom, #ffffff 0%, #f0f0f0 100%);
+    background: linear-gradient(
+      to bottom,
+      var(--primary-color-light),
+      var(--secondary-color-light),
+      var(--tertiary-color-light)
+    );
   }
 }
 
 .star {
   $star-count: 50;
-  --star-color: var(--primary-color, #ffffff);
+  --star-color: var(--primary-color, var(--star-color-dark));
   --star-tail-length: 6em;
   --star-tail-height: 2px;
   --star-width: calc(var(--star-tail-length) / 6);

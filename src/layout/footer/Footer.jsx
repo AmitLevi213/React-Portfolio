@@ -1,4 +1,3 @@
-import React from "react";
 import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
 import { useTheme } from "../../providers/DarkThemeProvider";
 import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
@@ -31,7 +30,7 @@ const Footer = () => {
         <BottomNavigationAction
           label="0546879014"
           icon={<ContactPhoneIcon sx={{ color: iconColor }} />}
-          sx={{ color: labelColor }}
+          sx={{ color: labelColor, fontFamily: "Montserrat, sans-serif" }}
         />
         <BottomNavigationAction
           onClick={() =>
@@ -42,17 +41,17 @@ const Footer = () => {
           }
           label="Linkedin"
           icon={<LinkedInIcon sx={{ color: iconColor }} />}
-          sx={{ color: labelColor }}
+          sx={{ color: labelColor, fontFamily: "Montserrat, sans-serif" }}
         />
         <BottomNavigationAction
           label="amitandta@gmail.com"
           icon={<EmailIcon sx={{ color: iconColor }} />}
-          sx={{ color: labelColor }}
+          sx={{ color: labelColor, fontFamily: "Montserrat, sans-serif" }}
         />
         <BottomNavigationAction
           label="Gan Yavne,IL"
           icon={<LocationOnIcon sx={{ color: iconColor }} />}
-          sx={{ color: labelColor }}
+          sx={{ color: labelColor, fontFamily: "Montserrat, sans-serif" }}
         />
       </BottomNavigation>
     </Paper>

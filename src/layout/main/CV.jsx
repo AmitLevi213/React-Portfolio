@@ -6,7 +6,7 @@ const CV = () => {
   const { isDark } = useTheme();
 
   const buttonStyles = {
-    color: isDark ? "#fff" : "#310047",
+    color: isDark ? "#d16aff" : "#310047",
     backgroundColor: isDark ? "#310047" : "#d16aff",
     borderRadius: "8px",
     padding: "12px 24px",
@@ -17,6 +17,7 @@ const CV = () => {
     "&:hover": {
       backgroundColor: isDark ? "#452a4e" : "#a987c4",
     },
+    fontFamily: "Montserrat, sans-serif",
   };
 
   const handleClick = () => {

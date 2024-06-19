@@ -16,42 +16,42 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "Project 1",
+      title: "Tic-Tac-Toe",
       imageUrl: "assets/images/tic-tac-toe.png",
       zip: "assets/zips/tic-tac-toe-master.zip",
       site: "https://amitlevi213.github.io/tic-tac-toe/tic-tac-toe.html",
     },
     {
       id: 2,
-      title: "Project 2",
+      title: "Calculator",
       imageUrl: "assets/images/calculator.png",
       zip: "zips/Calculator-master.zip",
       site: "https://amitlevi213.github.io/Calculator/calculator.html",
     },
     {
       id: 3,
-      title: "Project 3",
+      title: "Shopping Cart",
       imageUrl: "assets/images/shopping-cart.png",
       zip: "assets/zips/Shopping-Cart-master.zip",
       site: "https://amitlevi213.github.io/Shopping-Cart/",
     },
     {
       id: 4,
-      title: "Project 4",
+      title: "Page Builder",
       imageUrl: "assets/images/page-builder.png",
       zip: "assets/zips/PageBuilder-master.zip",
       site: "https://amitlevi213.github.io/PageBuilder/pageBuilder.html",
     },
     {
       id: 5,
-      title: "Project 5",
+      title: "Credit Card Checker",
       imageUrl: "assets/images/credit-card.png",
       zip: "assets/zips/credit-card-master.zip",
       site: "https://amitlevi213.github.io/credit-card/credit-card.html",
     },
     {
       id: 6,
-      title: "Project 6",
+      title: "Memory Game",
       imageUrl: "assets/images/memory-game.png",
       zip: "assets/zips/Memory-Game-master.zip",
       site: "https://amitlevi213.github.io/Memory-Game/index.html",
@@ -59,7 +59,7 @@ const Projects = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 6;
+  const projectsPerPage = 3;
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
 
   const handleNextPage = () => {
@@ -77,13 +77,14 @@ const Projects = () => {
     const endIndex = startIndex + projectsPerPage;
     return projectsData.slice(startIndex, endIndex);
   };
+
   const textColor = isDark ? "#d16aff" : "#310047";
 
   const buttonStyles = {
-    color: isDark ? "#fff" : "#310047",
+    color: isDark ? "#d16aff" : "#310047",
     backgroundColor: isDark ? "#310047" : "#d16aff",
     borderRadius: "8px",
-    padding: "12px 24px",
+    padding: "8px 16px",
     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
     fontWeight: "bold",
     textTransform: "none",
@@ -93,8 +94,15 @@ const Projects = () => {
     },
   };
 
+  const cardBackground = isDark ? "#5c489a" : "#e0dbff";
+
   return (
-    <Box>
+    <Box
+      sx={{
+        padding: "20px",
+        color: textColor,
+      }}
+    >
       <Grid container spacing={3}>
         {getPageProjects().map((project) => (
           <Grid item key={project.id} xs={12} sm={6} md={4}>
@@ -103,9 +111,10 @@ const Projects = () => {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-
                   justifyContent: "space-between",
                   height: "100%",
+                  background: cardBackground,
+                  color: isDark ? "#fff" : "#000",
                 }}
               >
                 <img
@@ -122,9 +131,11 @@ const Projects = () => {
                     {project.title}
                   </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions
+                  sx={{ display: "flex", justifyContent: "space-between" }}
+                >
                   <a
-                    href={`/assets/zips/${project.zip}`}
+                    href={project.zip}
                     download
                     style={{ ...buttonStyles, textDecoration: "none" }}
                   >
@@ -146,7 +157,7 @@ const Projects = () => {
       </Grid>
       <Box mt={3} display="flex" justifyContent="center">
         <Button
-          sx={{ color: textColor }}
+          sx={{ ...buttonStyles, marginRight: "8px" }}
           onClick={handlePrevPage}
           disabled={currentPage === 1}
         >
@@ -159,7 +170,7 @@ const Projects = () => {
           Page {currentPage} of {totalPages}
         </Typography>
         <Button
-          sx={{ color: textColor }}
+          sx={{ ...buttonStyles, marginLeft: "8px" }}
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
         >

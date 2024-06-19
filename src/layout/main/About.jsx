@@ -29,7 +29,11 @@ const About = () => {
         <Typography
           variant="body1"
           component="p"
-          sx={{ maxWidth: 600, color: isDark ? "#d16aff" : "#310047" }}
+          sx={{
+            maxWidth: 600,
+            color: isDark ? "#d16aff" : "#310047",
+            fontFamily: "Montserrat, sans-serif",
+          }}
         >
           I'm a web developer with a knack for innovation and a solid foundation
           in JavaScript, HTML5/CSS, Node.js, React.js, SQL/NoSQL, RESTful APIs,

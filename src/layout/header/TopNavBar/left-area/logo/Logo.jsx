@@ -11,7 +11,7 @@ const Logo = () => {
       sx={{
         display: { xs: "none", md: "inline-flex" },
         marginRight: 2,
-        fontFamily: "fantasy",
+        fontFamily: "Montserrat, sans-serif",
       }}
     >
       Amit Levi
