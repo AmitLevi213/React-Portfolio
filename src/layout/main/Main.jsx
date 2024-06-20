@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/material";
 import StarBackground from "./StarBackground";
 import { useTheme } from "../../providers/DarkThemeProvider"; // Assuming useTheme provides isDark

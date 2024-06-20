@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Button } from "@mui/material";
 import { useTheme } from "../../providers/DarkThemeProvider"; // Assuming useTheme provides isDark
 

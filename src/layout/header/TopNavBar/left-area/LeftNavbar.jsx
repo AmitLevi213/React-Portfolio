@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, useMediaQuery, IconButton } from "@mui/material";
 import LogoIcon from "./logo/LogoIcon";
 import Logo from "./logo/Logo";
