@@ -78,8 +78,6 @@ const Projects = () => {
     return projectsData.slice(startIndex, endIndex);
   };
 
-  const textColor = isDark ? "#d16aff" : "#310047";
-
   const buttonStyles = {
     color: isDark ? "#d16aff" : "#310047",
     backgroundColor: isDark ? "#310047" : "#d16aff",
@@ -92,17 +90,30 @@ const Projects = () => {
     "&:hover": {
       backgroundColor: isDark ? "#452a4e" : "#a987c4",
     },
+    fontFamily: "Montserrat, sans-serif",
   };
+  const textColor = isDark ? "#d16aff" : "#310047";
 
   const cardBackground = isDark ? "#5c489a" : "#e0dbff";
 
+  const fontStyle = {
+    fontFamily: "Montserrat, sans-serif",
+  };
   return (
     <Box
+      id="projects"
       sx={{
         padding: "20px",
         color: textColor,
       }}
     >
+      <Typography
+        variant="h4"
+        component="h4"
+        sx={{ textAlign: "center", mt: 2, pb: 2, ...fontStyle }}
+      >
+        Projects
+      </Typography>
       <Grid container spacing={3}>
         {getPageProjects().map((project) => (
           <Grid item key={project.id} xs={12} sm={6} md={4}>
@@ -127,7 +138,11 @@ const Projects = () => {
                   }}
                 />
                 <CardContent>
-                  <Typography variant="h5" component="div">
+                  <Typography
+                    sx={{ ...fontStyle, color: textColor }}
+                    variant="h5"
+                    component="div"
+                  >
                     {project.title}
                   </Typography>
                 </CardContent>
@@ -165,7 +180,7 @@ const Projects = () => {
         </Button>
         <Typography
           variant="body1"
-          style={{ margin: "0 16px", color: textColor }}
+          style={{ ...fontStyle, margin: "0 16px", color: textColor }}
         >
           Page {currentPage} of {totalPages}
         </Typography>

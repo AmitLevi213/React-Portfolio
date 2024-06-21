@@ -5,22 +5,24 @@ import CV from "./layout/main/CV";
 import ContactMe from "./layout/main/ContactMe";
 import Icons from "./layout/main/Icons";
 import Projects from "./layout/main/Projects";
-
+import { BrowserRouter } from "react-router-dom";
 import { DarkThemeProvider } from "./providers/DarkThemeProvider";
 
 function App() {
   return (
-    <div className="App">
-      <DarkThemeProvider>
-        <Layout>
-          <About></About>
-          <Icons></Icons>
-          <CV></CV>
-          <Projects></Projects>
-          <ContactMe></ContactMe>
-        </Layout>
-      </DarkThemeProvider>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <DarkThemeProvider>
+          <Layout>
+            <About id="main"></About>
+            <Icons></Icons>
+            <CV></CV>
+            <Projects id="projects"></Projects>
+            <ContactMe id="contact"></ContactMe>
+          </Layout>
+        </DarkThemeProvider>
+      </div>
+    </BrowserRouter>
   );
 }
 

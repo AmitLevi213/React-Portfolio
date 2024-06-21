@@ -23,21 +23,23 @@ const RightNavbar = () => {
     theme.breakpoints.down("md")
   );
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
+  const handleDrawerToggle = (sectionId) => {
+    setDrawerOpen(false); // Close the drawer first
+    scrollToSection(sectionId); // Scroll to the section
+  };
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const menuItems = (
     <>
       <Link
         sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
-        color={isDark ? "#d16aff" : "#310047"}
-        href="#"
-      >
-        Main
-      </Link>
-      <Link
-        sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
+        onClick={() => handleDrawerToggle("about")}
         color={isDark ? "#d16aff" : "#310047"}
         href="#about"
       >
@@ -45,13 +47,15 @@ const RightNavbar = () => {
       </Link>
       <Link
         sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
+        onClick={() => handleDrawerToggle("projects")}
         color={isDark ? "#d16aff" : "#310047"}
-        href="#gallery"
+        href="#projects"
       >
         Projects
       </Link>
       <Link
         sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
+        onClick={() => handleDrawerToggle("contact")}
         color={isDark ? "#d16aff" : "#310047"}
         href="#contact"
       >
@@ -79,27 +83,17 @@ const RightNavbar = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            onClick={handleDrawerToggle}
+            onClick={() => setDrawerOpen(true)}
           >
             <MenuIcon />
           </IconButton>
-          <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
-            <List sx={{ width: 250 }} onClick={handleDrawerToggle}>
-              <ListItem button>
-                <ListItemText>
-                  <Link
-                    sx={{
-                      textDecoration: "none",
-                      fontFamily: "Montserrat, sans-serif",
-                    }}
-                    color={isDark ? "#d16aff" : "#310047"}
-                    href="#"
-                  >
-                    Main
-                  </Link>
-                </ListItemText>
-              </ListItem>
-              <ListItem button>
+          <Drawer
+            anchor="right"
+            open={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+          >
+            <List sx={{ width: 250 }}>
+              <ListItem button onClick={() => handleDrawerToggle("about")}>
                 <ListItemText>
                   <Link
                     sx={{
@@ -113,7 +107,7 @@ const RightNavbar = () => {
                   </Link>
                 </ListItemText>
               </ListItem>
-              <ListItem button>
+              <ListItem button onClick={() => handleDrawerToggle("projects")}>
                 <ListItemText>
                   <Link
                     sx={{
@@ -121,13 +115,13 @@ const RightNavbar = () => {
                       fontFamily: "Montserrat, sans-serif",
                     }}
                     color={isDark ? "#d16aff" : "#310047"}
-                    href="#gallery"
+                    href="#projects"
                   >
                     Projects
                   </Link>
                 </ListItemText>
               </ListItem>
-              <ListItem button>
+              <ListItem button onClick={() => handleDrawerToggle("contact")}>
                 <ListItemText>
                   <Link
                     sx={{
@@ -142,7 +136,7 @@ const RightNavbar = () => {
                 </ListItemText>
               </ListItem>
               <ListItem button>
-                <IconButton sx={{ marginLeft: 1 }} onClick={toggleDarkMode}>
+                <IconButton onClick={toggleDarkMode}>
                   {isDark ? <LightModeIcon /> : <DarkModeIcon />}
                 </IconButton>
               </ListItem>

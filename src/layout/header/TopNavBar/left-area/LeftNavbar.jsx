@@ -3,8 +3,11 @@ import LogoIcon from "./logo/LogoIcon";
 import Logo from "./logo/Logo";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useTheme } from "../../../../providers/DarkThemeProvider";
 
 const LeftNavbar = () => {
+  const { isDark } = useTheme();
+  const iconColor = isDark ? "#d16aff" : "#310047";
   const isMobileOrTablet = useMediaQuery((theme) =>
     theme.breakpoints.down("md")
   );
@@ -19,7 +22,7 @@ const LeftNavbar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GitHubIcon fontSize="large" />
+          <GitHubIcon sx={{ color: iconColor }} fontSize="large" />
         </IconButton>
         <IconButton
           component="a"
@@ -27,7 +30,7 @@ const LeftNavbar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedInIcon fontSize="large" />
+          <LinkedInIcon sx={{ color: iconColor }} fontSize="large" />
         </IconButton>
       </Box>
     </Box>
