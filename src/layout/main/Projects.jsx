@@ -33,16 +33,16 @@ const Projects = () => {
     {
       id: 3,
       title: "Shopping Cart",
-      description: "a Shopping Cart, made by HTML5,CSS,JS",
       imageUrl: "assets/images/shopping-cart.png",
+      description: "a Shopping Cart, made by HTML5,CSS,JS",
       zip: "assets/zips/Shopping-Cart-master.zip",
       site: "https://amitlevi213.github.io/Shopping-Cart/",
     },
     {
       id: 4,
       title: "Page Builder",
-      description: "a Page Builder, made by HTML5,CSS,JS",
       imageUrl: "assets/images/page-builder.png",
+      description: "a Page Builder, made by HTML5,CSS,JS",
       zip: "assets/zips/PageBuilder-master.zip",
       site: "https://amitlevi213.github.io/PageBuilder/pageBuilder.html",
     },
@@ -110,6 +110,9 @@ const Projects = () => {
     <Box
       id="projects"
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         padding: { xs: "10px", sm: "20px" },
         color: textColor,
       }}
@@ -121,7 +124,7 @@ const Projects = () => {
       >
         Projects
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {getPageProjects().map((project) => (
           <Grid item key={project.id} xs={12} sm={6} md={4} lg={3}>
             <Slide direction="right" in={true} mountOnEnter unmountOnExit>
@@ -151,13 +154,6 @@ const Projects = () => {
                     component="div"
                   >
                     {project.title}
-                  </Typography>
-                  <Typography
-                    sx={{ ...fontStyle, color: textColor, fontSize: "18px" }}
-                    variant="h5"
-                    component="div"
-                  >
-                    {project.description}
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "space-between" }}>
