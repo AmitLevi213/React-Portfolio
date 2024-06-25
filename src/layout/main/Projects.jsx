@@ -17,6 +17,7 @@ const Projects = () => {
     {
       id: 1,
       title: "Tic-Tac-Toe",
+      description: "a simple Tic-Tac-Toe game, made by HTML5,CSS,JS",
       imageUrl: "assets/images/tic-tac-toe.png",
       zip: "assets/zips/tic-tac-toe-master.zip",
       site: "https://amitlevi213.github.io/tic-tac-toe/tic-tac-toe.html",
@@ -24,6 +25,7 @@ const Projects = () => {
     {
       id: 2,
       title: "Calculator",
+      description: "a simple Calculator, made by HTML5,CSS,JS",
       imageUrl: "assets/images/calculator.png",
       zip: "zips/Calculator-master.zip",
       site: "https://amitlevi213.github.io/Calculator/calculator.html",
@@ -31,6 +33,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Shopping Cart",
+      description: "a Shopping Cart, made by HTML5,CSS,JS",
       imageUrl: "assets/images/shopping-cart.png",
       zip: "assets/zips/Shopping-Cart-master.zip",
       site: "https://amitlevi213.github.io/Shopping-Cart/",
@@ -38,6 +41,7 @@ const Projects = () => {
     {
       id: 4,
       title: "Page Builder",
+      description: "a Page Builder, made by HTML5,CSS,JS",
       imageUrl: "assets/images/page-builder.png",
       zip: "assets/zips/PageBuilder-master.zip",
       site: "https://amitlevi213.github.io/PageBuilder/pageBuilder.html",
@@ -45,6 +49,8 @@ const Projects = () => {
     {
       id: 5,
       title: "Credit Card Checker",
+      description:
+        "a Credit Card Checker(Visa,MasterCard,American Express,Discover, Diners Club), made by HTML5,CSS,JS",
       imageUrl: "assets/images/credit-card.png",
       zip: "assets/zips/credit-card-master.zip",
       site: "https://amitlevi213.github.io/credit-card/credit-card.html",
@@ -52,6 +58,7 @@ const Projects = () => {
     {
       id: 6,
       title: "Memory Game",
+      description: "a simple Memory Game(with emojis), made by HTML5,CSS,JS",
       imageUrl: "assets/images/memory-game.png",
       zip: "assets/zips/Memory-Game-master.zip",
       site: "https://amitlevi213.github.io/Memory-Game/index.html",
@@ -92,18 +99,18 @@ const Projects = () => {
     },
     fontFamily: "Montserrat, sans-serif",
   };
+
   const textColor = isDark ? "#d16aff" : "#310047";
-
   const cardBackground = isDark ? "#5c489a" : "#e0dbff";
-
   const fontStyle = {
     fontFamily: "Montserrat, sans-serif",
   };
+
   return (
     <Box
       id="projects"
       sx={{
-        padding: "20px",
+        padding: { xs: "10px", sm: "20px" },
         color: textColor,
       }}
     >
@@ -116,8 +123,8 @@ const Projects = () => {
       </Typography>
       <Grid container spacing={3}>
         {getPageProjects().map((project) => (
-          <Grid item key={project.id} xs={12} sm={6} md={4}>
-            <Slide direction="up" in={true} mountOnEnter unmountOnExit>
+          <Grid item key={project.id} xs={12} sm={6} md={4} lg={3}>
+            <Slide direction="right" in={true} mountOnEnter unmountOnExit>
               <Card
                 sx={{
                   display: "flex",
@@ -132,7 +139,7 @@ const Projects = () => {
                   src={project.imageUrl}
                   alt={project.title}
                   style={{
-                    maxWidth: "100%",
+                    width: "100%",
                     height: "200px",
                     objectFit: "cover",
                   }}
@@ -145,10 +152,15 @@ const Projects = () => {
                   >
                     {project.title}
                   </Typography>
+                  <Typography
+                    sx={{ ...fontStyle, color: textColor, fontSize: "18px" }}
+                    variant="h5"
+                    component="div"
+                  >
+                    {project.description}
+                  </Typography>
                 </CardContent>
-                <CardActions
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
+                <CardActions sx={{ justifyContent: "space-between" }}>
                   <a
                     href={project.zip}
                     download
