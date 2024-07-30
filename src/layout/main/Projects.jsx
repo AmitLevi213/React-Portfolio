@@ -63,6 +63,24 @@ const Projects = () => {
       zip: "assets/zips/Memory-Game-master.zip",
       site: "https://amitlevi213.github.io/Memory-Game/index.html",
     },
+    {
+      id: 7,
+      title: "Card Concierge",
+      description:
+        "A dynamic React MUI app showcasing your business offerings through visually appealing and interactive cards for an engaging customer experience.",
+      imageUrl: "",
+      zip: "",
+      site: "",
+    },
+    {
+      id: 7,
+      title: "Soundscape Central",
+      description:
+        "SoundScape Central is an innovative platform designed to elevate your music presence by offering a dynamic and immersive experience for both creators and enthusiasts",
+      imageUrl: "",
+      zip: "",
+      site: "",
+    },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
