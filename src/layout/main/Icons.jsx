@@ -12,13 +12,21 @@ import { DiMongodb } from "react-icons/di";
 import { Box } from "@mui/material";
 
 const iconStyles = {
-  fontSize: "5rem",
-  margin: "1rem",
+  fontSize: "2.5rem",
 };
 
 const Icons = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        padding: "2rem",
+        borderRadius: "8px",
+      }}
+    >
       <IoLogoFirebase color="#FFCA28" style={iconStyles} />
       <FaSass color="magenta" style={iconStyles} />
       <DiJavascript color="#F7DF1E" style={iconStyles} />

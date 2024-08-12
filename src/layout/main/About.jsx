@@ -1,5 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useTheme } from "../../providers/DarkThemeProvider";
+import Divider from "@mui/material/Divider";
+import "./about.css";
 
 const About = () => {
   const { isDark } = useTheme();
@@ -9,7 +11,7 @@ const About = () => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: { xs: "column", sm: "row" },
           alignItems: "center",
           textAlign: "center",
         }}
@@ -26,7 +28,9 @@ const About = () => {
             mb: 4,
           }}
         />
+        <Divider sx={{ m: "35px" }} className="divider" />
         <Typography
+          className="paragraph"
           variant="body1"
           component="p"
           sx={{
