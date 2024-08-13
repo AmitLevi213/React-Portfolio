@@ -1,7 +1,6 @@
 import "./App.css";
 import Layout from "./layout/Layout";
 import About from "./layout/main/About";
-import CV from "./layout/main/CV";
 import ContactMe from "./layout/main/ContactMe";
 import Icons from "./layout/main/Icons";
 import Projects from "./layout/main/Projects";
@@ -16,7 +15,6 @@ function App() {
           <Layout>
             <About id="main"></About>
             <Icons></Icons>
-            <CV></CV>
             <Projects id="projects"></Projects>
             <ContactMe id="contact"></ContactMe>
           </Layout>

@@ -24,8 +24,8 @@ const RightNavbar = () => {
   );
 
   const handleDrawerToggle = (sectionId) => {
-    setDrawerOpen(false); // Close the drawer first
-    scrollToSection(sectionId); // Scroll to the section
+    setDrawerOpen(false);
+    scrollToSection(sectionId);
   };
 
   const scrollToSection = (sectionId) => {
@@ -40,7 +40,7 @@ const RightNavbar = () => {
       <Link
         sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         onClick={() => handleDrawerToggle("about")}
-        color={isDark ? "#d16aff" : "#310047"}
+        color={isDark ? "#00ADB5" : "#ffffff"}
         href="#about"
       >
         About
@@ -48,7 +48,7 @@ const RightNavbar = () => {
       <Link
         sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         onClick={() => handleDrawerToggle("projects")}
-        color={isDark ? "#d16aff" : "#310047"}
+        color={isDark ? "#00ADB5" : "#ffffff"}
         href="#projects"
       >
         Projects
@@ -56,7 +56,7 @@ const RightNavbar = () => {
       <Link
         sx={{ textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
         onClick={() => handleDrawerToggle("contact")}
-        color={isDark ? "#d16aff" : "#310047"}
+        color={isDark ? "#00ADB5" : "#ffffff"}
         href="#contact"
       >
         Contact me
@@ -100,7 +100,7 @@ const RightNavbar = () => {
                       textDecoration: "none",
                       fontFamily: "Montserrat, sans-serif",
                     }}
-                    color={isDark ? "#d16aff" : "#310047"}
+                    color={isDark ? "#00ADB5" : "#ffffff"}
                     href="#about"
                   >
                     About
@@ -114,7 +114,7 @@ const RightNavbar = () => {
                       textDecoration: "none",
                       fontFamily: "Montserrat, sans-serif",
                     }}
-                    color={isDark ? "#d16aff" : "#310047"}
+                    color={isDark ? "#00ADB5" : "#ffffff"}
                     href="#projects"
                   >
                     Projects
@@ -128,7 +128,7 @@ const RightNavbar = () => {
                       textDecoration: "none",
                       fontFamily: "Montserrat, sans-serif",
                     }}
-                    color={isDark ? "#d16aff" : "#310047"}
+                    color={isDark ? "#00ADB5" : "#ffffff"}
                     href="#contact"
                   >
                     Contact me

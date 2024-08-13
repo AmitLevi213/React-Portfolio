@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <Typography
       variant="h5"
-      color={isDark ? "#d16aff" : "#310047"}
+      color={isDark ? "#00ADB5" : "white"}
       sx={{
         display: { xs: "none", md: "inline-flex" },
         marginRight: 2,

@@ -7,13 +7,12 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const Footer = () => {
   const { isDark } = useTheme();
-  const iconColor = isDark ? "#d16aff" : "#310047";
-  const labelColor = isDark ? "#d16aff" : "#310047";
+  const iconColor = isDark ? "#00ADB5" : "white";
+  const labelColor = isDark ? "#00ADB5" : "white";
 
   return (
     <Paper
       sx={{
-        position: "sticky",
         bottom: 0,
         left: 0,
         right: 0,
@@ -24,7 +23,7 @@ const Footer = () => {
       <BottomNavigation
         showLabels
         sx={{
-          background: isDark ? "#310047" : "#d16aff",
+          background: isDark ? "#222831" : "#00ADB5",
         }}
       >
         <BottomNavigationAction

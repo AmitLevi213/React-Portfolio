@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import StarBackground from "./StarBackground";
+// import StarBackground from "./StarBackground";
 import { useTheme } from "../../providers/DarkThemeProvider"; // Assuming useTheme provides isDark
 
 const Main = ({ children }) => {
@@ -7,12 +7,12 @@ const Main = ({ children }) => {
 
   return (
     <>
-      <StarBackground isDark={isDark} />
+      {/* <StarBackground isDark={isDark} /> */}
       <Box
         sx={{
           position: "relative",
           minHeight: "100vh",
-          backgroundColor: "transparent",
+          backgroundColor: isDark ? "#393E46" : "#EEEEEE",
         }}
       >
         {children}

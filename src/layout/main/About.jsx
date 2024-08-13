@@ -7,7 +7,10 @@ const About = () => {
   const { isDark } = useTheme();
 
   return (
-    <Container id="about" sx={{ py: 5 }}>
+    <Container
+      id="about"
+      sx={{ py: 5, display: "flex", justifyContent: "space-between" }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -35,7 +38,7 @@ const About = () => {
           component="p"
           sx={{
             maxWidth: 600,
-            color: isDark ? "#d16aff" : "#310047",
+            color: isDark ? "#00ADB5" : "#222831",
             fontFamily: "Montserrat, sans-serif",
           }}
         >

@@ -8,8 +8,11 @@ import {
   Grid,
   Slide,
   Button,
+  IconButton,
 } from "@mui/material";
 import { useTheme } from "../../providers/DarkThemeProvider";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const Projects = () => {
   const { isDark } = useTheme();
@@ -117,8 +120,8 @@ const Projects = () => {
     },
     fontFamily: "Montserrat, sans-serif",
   };
-
-  const textColor = isDark ? "#d16aff" : "#310047";
+  const iconColors = isDark ? "#222831" : "#00ADB5";
+  const textColor = isDark ? "#00ADB5" : "white";
   const cardBackground = isDark ? "#5c489a" : "#e0dbff";
   const fontStyle = {
     fontFamily: "Montserrat, sans-serif",
@@ -133,6 +136,7 @@ const Projects = () => {
         alignItems: "center",
         padding: { xs: "10px", sm: "20px" },
         color: textColor,
+        backgroundColor: isDark ? "#ADB5BD" : "#6C757D",
       }}
     >
       <Typography
@@ -216,26 +220,22 @@ const Projects = () => {
         ))}
       </Grid>
       <Box mt={3} display="flex" justifyContent="center">
-        <Button
-          sx={{ ...buttonStyles, marginRight: "8px" }}
+        <IconButton
+          aria-label="previous page"
           onClick={handlePrevPage}
           disabled={currentPage === 1}
+          sx={{ color: iconColors }}
         >
-          Prev
-        </Button>
-        <Typography
-          variant="body1"
-          style={{ ...fontStyle, margin: "0 16px", color: textColor }}
-        >
-          Page {currentPage} of {totalPages}
-        </Typography>
-        <Button
-          sx={{ ...buttonStyles, marginLeft: "8px" }}
+          <NavigateBeforeIcon />
+        </IconButton>
+        <IconButton
+          aria-label="next page"
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
+          sx={{ color: iconColors }}
         >
-          Next
-        </Button>
+          <NavigateNextIcon />
+        </IconButton>
       </Box>
     </Box>
   );

@@ -8,11 +8,11 @@ const Navbar = () => {
   const { isDark } = useTheme();
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="">
       <Toolbar
         sx={{
           justifyContent: "space-between",
-          background: isDark ? "#310047" : "#d16aff",
+          background: isDark ? "#222831" : "#00ADB5",
         }}
       >
         <LeftNavbar />
