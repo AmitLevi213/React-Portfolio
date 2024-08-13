@@ -43,6 +43,7 @@ const ContactMe = () => {
       );
     setForm({ fullname: "", email: "", phone: "", message: "" });
   };
+
   const fontStyle = {
     fontFamily: "Montserrat, sans-serif",
   };
@@ -50,31 +51,32 @@ const ContactMe = () => {
   const textFieldStyles = {
     ...fontStyle,
     "& .MuiInputBase-root": {
-      color: isDark ? "#d16aff" : "#310047",
+      color: isDark ? "#e3f2fd" : "#1a0033",
     },
     "& .MuiInputLabel-root": {
-      color: isDark ? "#d16aff" : "#310047",
+      color: isDark ? "#e3f2fd" : "#1a0033",
     },
     "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: isDark ? "#d16aff" : "#310047",
+      borderColor: isDark ? "#e3f2fd" : "#1a0033",
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: isDark ? "#d16aff" : "#310047",
+      borderColor: isDark ? "#e3f2fd" : "#1a0033",
     },
   };
 
   const buttonStyles = {
     ...fontStyle,
-    color: isDark ? "#d16aff" : "#310047",
-    backgroundColor: isDark ? "#310047" : "#d16aff",
-    borderRadius: "8px",
+    color: isDark ? "#e3f2fd" : "#1a0033",
+    backgroundColor: isDark ? "#1a0033" : "#e3f2fd",
+    borderRadius: "24px",
     padding: "12px 24px",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.2)",
     fontWeight: "bold",
     textTransform: "none",
-    transition: "background-color 0.3s, color 0.3s",
+    transition: "background-color 0.3s, color 0.3s, transform 0.3s",
     "&:hover": {
       backgroundColor: isDark ? "#452a4e" : "#a987c4",
+      transform: "scale(1.05)",
     },
   };
 
@@ -87,8 +89,13 @@ const ContactMe = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        mt: 4,
-        fontFamily: "Roboto, sans-serif",
+        padding: "1rem",
+        borderRadius: "16px",
+        boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+        backgroundColor: isDark ? "#1a0033" : "#e3f2fd",
+        maxWidth: "600px",
+        margin: "auto",
+        marginBottom: 3,
       }}
     >
       <Typography
@@ -96,13 +103,13 @@ const ContactMe = () => {
         component="h4"
         sx={{
           mb: 4,
-          color: isDark ? "#d16aff" : "#310047",
+          color: isDark ? "#e3f2fd" : "#1a0033",
           ...fontStyle,
         }}
       >
         Contact Me
       </Typography>
-      <Grid container spacing={2} sx={{ maxWidth: 600 }}>
+      <Grid container spacing={2} sx={{ width: "100%" }}>
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
@@ -110,7 +117,7 @@ const ContactMe = () => {
             name="fullname"
             value={form.fullname}
             onChange={handleChange}
-            sx={{ ...textFieldStyles, ...fontStyle }}
+            sx={textFieldStyles}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -146,7 +153,7 @@ const ContactMe = () => {
           />
         </Grid>
       </Grid>
-      <Button type="submit" sx={{ ...buttonStyles, m: 2 }}>
+      <Button type="submit" sx={{ ...buttonStyles, mt: 4 }}>
         Submit
       </Button>
     </Box>

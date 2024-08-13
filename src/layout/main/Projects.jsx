@@ -106,9 +106,9 @@ const Projects = () => {
   const buttonStyles = {
     color: isDark ? "#d16aff" : "#310047",
     backgroundColor: isDark ? "#310047" : "#d16aff",
-    borderRadius: "8px",
+    borderRadius: "20px",
     padding: "8px 16px",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.1)",
     fontWeight: "bold",
     textTransform: "none",
     transition: "background-color 0.3s, color 0.3s",
@@ -154,6 +154,13 @@ const Projects = () => {
                   height: "100%",
                   background: cardBackground,
                   color: isDark ? "#fff" : "#000",
+                  borderRadius: "16px",
+                  boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.3)",
+                  },
                 }}
               >
                 <img
@@ -163,6 +170,8 @@ const Projects = () => {
                     width: "100%",
                     height: "200px",
                     objectFit: "cover",
+                    borderTopLeftRadius: "16px",
+                    borderTopRightRadius: "16px",
                   }}
                 />
                 <CardContent>
@@ -173,23 +182,33 @@ const Projects = () => {
                   >
                     {project.title}
                   </Typography>
+                  <Typography
+                    sx={{ ...fontStyle, color: textColor, mt: 1 }}
+                    variant="body2"
+                  >
+                    {project.description}
+                  </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "space-between" }}>
-                  <a
-                    href={project.zip}
-                    download
-                    style={{ ...buttonStyles, textDecoration: "none" }}
-                  >
-                    Download
-                  </a>
-                  <a
-                    href={project.site}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ ...buttonStyles, textDecoration: "none" }}
-                  >
-                    Watch
-                  </a>
+                  {project.zip && (
+                    <a
+                      href={project.zip}
+                      download
+                      style={{ ...buttonStyles, textDecoration: "none" }}
+                    >
+                      Download
+                    </a>
+                  )}
+                  {project.site && (
+                    <a
+                      href={project.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ ...buttonStyles, textDecoration: "none" }}
+                    >
+                      Watch
+                    </a>
+                  )}
                 </CardActions>
               </Card>
             </Slide>
